@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>vender Orders</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="orders.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+</head>
+<body>
+
+<div class="navbar">
+    <div class="logo"><span class="servi">Servi</span><span class="go">GO</span></div>
+    <div>
+        <a href="../products/products.html">Products</a>
+        <a href="orders.html">Orders</a>
+        <a href="../profilev/profilev.html">Profile</a>
+    </div>
+</div>
+
+<div class="main">
+
+    <!-- LEFT -->
+    <div class="left">
+        <img src="https://images.unsplash.com/photo-1600891964599-f61ba0e24092">
+    </div>
+
+    <!-- RIGHT -->
+    <div class="right">
+        <div class="card">
+            <h2>Order Management</h2>
+
+            <!-- SUMMARY -->
+            <div class="summary">
+                <div class="summary-box">
+                    <i class="fa fa-bars"></i> New Orders
+                    <br>
+                    <button>View</button>
+                </div>
+
+                <div class="summary-box">
+                    <i class="fa fa-clock"></i> Today's Orders
+                    <br>
+                    <button>View</button>
+                </div>
+
+                <div class="summary-box">
+                    <i class="fa fa-list"></i> Pending / Prepared
+                    <br>
+                    <button>View</button>
+                </div>
+            </div>
+
+            <!-- FILTER -->
+            <div class="tabs">
+                <div class="tab">All Orders</div>
+                <div class="tab">New</div>
+                <div class="tab">Preparing</div>
+                <div class="tab">Out for delivery</div>
+                <div class="tab">Completed</div>
+            </div>
+
+            <!-- ORDER CARD -->
+            <div class="order-card">
+                <div class="order-top">
+                    <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2">
+                    <div>
+                        <strong># Order code and name of restaurant</strong><br>
+                        Total: ₹150.00 | Ordered 20 mins ago
+                    </div>
+                    <div class="status-badge">Paid</div>
+                </div>
+
+                <button class="btn">Accept</button>
+                <button class="btn">Reject</button>
+                <button class="btn">Mark as Preparing</button>
+                <button class="btn">OFD</button>
+                <button class="btn">Delivered</button>
+
+                
+            </div>
+
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

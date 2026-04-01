@@ -1,0 +1,137 @@
+body{
+    margin: 0;
+    overflow-x: hidden;
+}
+/* uppar side */
+.search-container{
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+    z-index: 999;
+    background-color: white;
+    width: 100%;
+    display: flex;
+    padding: 20px;
+    color: black;
+    box-sizing: border-box;
+}
+.location-map{
+    color: rgb(230, 139, 139);
+    font-size: 45px;
+}
+.caret-up{
+    color: black;
+    font-size: 27px;
+    cursor: pointer;
+    margin-left: 46px;
+}
+.detectionLocation input{
+    border: none;
+    font-size: 22px;
+    width: 150px;
+    margin-left: 18px;
+}
+.line{
+    margin: 0 40px;
+    padding: 0;
+}
+
+.search-items {
+    position: relative;
+    display: inline-block;
+    flex: 1;
+    margin-left: 0px;
+    margin-top: 10px;
+}
+
+.search-items input[type="text"] {
+    padding-left: 80px; 
+    height: 40px;
+    font-size: 18px;
+    width: 80%;
+
+}
+.search-items i.fa-solid.fa-magnifying-glass {
+    position: absolute;
+    left: 25px; 
+    margin-top: 23px;
+    transform: translateY(-50%);
+    font-size: 23px; 
+    color: #666; 
+    pointer-events: none; 
+}
+
+
+.cube{
+    display: inline-block;
+    position: relative;
+}
+
+.profile-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 25.5px;
+    width: 57px;
+    height: 57px;
+    border-radius: 50%;
+    border: 3.2px solid #007bff;
+    background-color: white;
+    margin-top: 1px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.profile-icon:hover {
+    background-color: #007bff;
+    color: white;
+}
+
+.icons-container {
+    display: flex;
+    align-items: center;
+    gap: 50px;
+    margin-left: auto;
+}
+.circle{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 25.5px;
+    width: 57px;
+    height: 57px;
+    border-radius: 50%;
+    border: 3.2px solid #9d4eb1;
+    background-color: white;
+    margin-top: 1px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.circle:hover {
+    background-color: #9d4eb1;
+    color: white;
+}
+
+
+.small-circle{
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background-color: #9d4eb1;
+    border-radius: 50%;
+    color: white;
+    font-size: 12px;
+    font-weight: bold;
+    text-align: center;
+    top: -8px;
+    right: -8px;
+
+}
+/* vegetables heading */
+h1{
+    margin-left: 25px;
+    margin-top: 0px;
+    font-style: normal;
+    font-size: 35px;
+}

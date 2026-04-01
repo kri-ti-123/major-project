@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Food</title>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="food.css">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+</head>
+<body>
+
+<!-- ================= TOP SEARCH BAR ================= -->
+<div class="search-container">
+
+    <div class="detectionLocation">
+        <i class="fa-solid fa-location-dot location-map"></i>
+        <input type="text" placeholder="Prayagraj">
+        <i class="fa-solid fa-caret-down caret-up"></i>
+    </div>
+
+    <div class="line"></div>
+
+    <div class="search-items">
+        <i class="fa-solid fa-magnifying-glass"></i>
+        <input type="text" placeholder="Search for food">
+    </div>
+
+    <div class="icons-container">
+        <div class="profile-icon" onclick="window.location.href='profile/profile.html'">
+            <i class="fa-solid fa-user"></i>
+        </div>
+
+        <div class="cube">
+            <div class="circle"onclick="window.location.href='cart.html'">
+                <i class="fa-solid fa-cart-shopping"></i>
+            </div>
+            <div class="small-circle">0</div>
+        </div>
+    </div>
+
+</div>
+
+<!-- ================= BANNER SLIDER ================= -->
+<div class="banner">
+
+    <div class="banner-slide active">
+        <h2>PIZZA</h2>
+        <img src="..\assets\images\food\pizza-removebg-preview.png">
+        <p>UP TO 40% OFF</p>
+    </div>
+
+    <div class="banner-slide">
+        <h2>BURGER</h2>
+        <img src="..\assets\images\food\burgers-removebg-preview.png">
+        <p>BUY 1 GET 1</p>
+    </div>
+
+    <div class="banner-slide">
+        <h2>MOMOS</h2>
+        <img src="..\assets\images\food\paneer-momos-removebg-preview.png">
+        <p>HOT & FRESH</p>
+    </div>
+
+    <div class="dots">
+        <span class="dot active" data-index="0"></span>
+        <span class="dot" data-index="1"></span>
+        <span class="dot" data-index="2"></span>
+    </div>
+
+</div>
+
+<!-- ================= CATEGORIES ================= -->
+<div class="categories">
+
+    <div class="category">
+        <img src="..\assets\images\food\pizza-removebg-preview.png">
+        <p>Pizza</p>
+    </div>
+
+    <div class="category">
+        <img src="..\assets\images\food\burgers.jpg">
+        <p>Burger</p>
+    </div>
+
+    <div class="category">
+        <img src="..\assets\images\food\momos.jpeg">
+        <p>Momos</p>
+    </div>
+
+    <div class="category">
+        <img src="..\assets\images\food\pasta.jpeg">
+        <p>Pasta</p>
+    </div>
+    <div class="category">
+        <img src="..\assets\images\food\pizza-removebg-preview.png">
+        <p>Pizza</p>
+    </div>
+
+    <div class="category">
+        <img src="..\assets\images\food\burgers.jpg">
+        <p>Burger</p>
+    </div>
+
+    <div class="category">
+        <img src="..\assets\images\food\momos.jpeg">
+        <p>Momos</p>
+    </div>
+
+    <div class="category">
+        <img src="..\assets\images\food\pasta.jpeg">
+        <p>Pasta</p>
+    </div>
+     <div class="category">
+        <img src="..\assets\images\food\pizza-removebg-preview.png">
+        <p>Pizza</p>
+    </div>
+
+    <div class="category">
+        <img src="..\assets\images\food\burgers.jpg">
+        <p>Burger</p>
+    </div>
+
+    <div class="category">
+        <img src="..\assets\images\food\momos.jpeg">
+        <p>Momos</p>
+    </div>
+
+    <div class="category">
+        <img src="..\assets\images\food\pasta.jpeg">
+        <p>Pasta</p>
+    </div>
+
+</div>
+
+<!-- ================= RECOMMENDED ================= -->
+<div class="section-title">RECOMMENDED FOOD</div>
+
+<div class="cards">
+
+    <div class="card">
+        <img src="..\assets\images\food\cheesee pizzaa.jpeg">
+        <span class="offer">FLAT 30% OFF</span>
+        <h4>Cheese Pizza
+              <p class="price" > <del>₹200</del> ₹140</p>
+         </h4>
+       
+        <div class="rating">
+            ⭐ 4.5
+            <button class="add-to-cart">Add to Cart</button>
+        </div>
+    </div>
+
+    <div class="card">
+        <img src="..\assets\images\food\burgers.jpg">
+        <span class="offer">FLAT ₹50 OFF</span>
+        <h4>Veg Burger</h4>
+               <p class="price"> <del>₹180</del> ₹130</p>
+        <div class="rating">
+            ⭐ 4.2
+            <button class="add-to-cart">Add to Cart</button>
+        </div>
+    </div>
+
+    <div class="card">
+        <img src="..\assets\images\food\momos.jpeg">
+        <span class="offer">HOT DEAL</span>
+        <h4>Steam Momos</h4>
+                <p class="price"> <del>₹150</del> ₹110</p>
+        
+        <div class="rating">
+            ⭐ 4.4
+            <button class="add-to-cart">Add to Cart</button>
+        </div>
+    </div>
+
+    <div class="card">
+        <img src="..\assets\images\food\white sauce pasta.jpeg">
+        <span class="offer">FLAT 20% OFF</span>
+        <h4>White Sauce Pasta</h4>
+               <p class="price"> <del>₹200</del> ₹160</p>
+            
+        <div class="rating">
+            ⭐ 4.1
+            <button class="add-to-cart">Add to Cart</button>
+        </div>
+    </div>
+
+    <div class="card">
+        <img src="..\assets\images\food\cheesee pizzaa.jpeg">
+        <span class="offer">FLAT 30% OFF</span>
+        <h4>Cheese Pizza</h4>
+    
+                 <p class="price"> <del>₹200</del> ₹140</p>
+           
+        <div class="rating">
+            ⭐ 4.5
+            <button class="add-to-cart">Add to Cart</button>
+        </div>
+    </div>
+
+    <div class="card">
+        <img src="..\assets\images\food\burgers.jpg">
+        <span class="offer">FLAT ₹50 OFF</span>
+        <h4>Veg Burger</h4>
+        
+                <p class="price"> <del>₹180</del> ₹130</p>
+           
+        <div class="rating">
+            ⭐ 4.2
+            <button class="add-to-cart">Add to Cart</button>
+        </div>
+    </div>
+
+    <div class="card">
+        <img src="..\assets\images\food\momos.jpeg">
+        <span class="offer">HOT DEAL</span>
+        <h4>Steam Momos</h4>
+             
+                <p class="price"> <del>₹150</del> ₹110</p>
+            
+        <div class="rating">
+            ⭐ 4.4
+            <button class="add-to-cart">Add to Cart</button>
+        </div>
+    </div>
+
+
+</div>
+
+<!-- ================= BOTTOM NAV ================= -->
+<div class="bottom-nav">
+    <a href="food.html" class="active-nav">Food</a>
+    <a href="grocery.html">Grocery</a>
+    <a href="driver.html">Driver</a>
+</div>
+
+<!-- JS -->
+<script src="food.js"></script>
+</body>
+</html>

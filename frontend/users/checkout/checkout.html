@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkout</title>
+    <link rel="stylesheet" href="checkout.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+</head>
+<body>
+    <div class="checkout-container">
+        <button class="back-btn" onclick="history.back()">← Back to Cart</button>
+        <h2>Checkout</h2>
+        
+        <div class="step" id="address-step">
+            <h3>Delivery Address</h3>
+            <form id="address-form">
+                <input type="text" id="name" placeholder="Full Name" required>
+                <input type="tel" id="phone" placeholder="Phone Number" required>
+                <textarea id="address" placeholder="Full Address" required></textarea>
+                <button type="button" onclick="nextStep('payment-step')">Next</button>
+            </form>
+        </div>
+        
+        <div class="step" id="payment-step" style="display: none;">
+            <h3>Payment Method</h3>
+            <form id="payment-form">
+                <label><input type="radio" name="payment" value="cod" checked> Cash on Delivery</label>
+                <label><input type="radio" name="payment" value="card"> Credit/Debit Card</label>
+                <label><input type="radio" name="payment" value="upi"> UPI</label>
+                <button type="button" onclick="nextStep('confirm-step')">Next</button>
+                <button type="button" onclick="prevStep('address-step')">Back</button>
+            </form>
+        </div>
+        
+        <div class="step" id="confirm-step" style="display: none;">
+            <h3>Confirm Order</h3>
+            <div id="order-summary"></div>
+            <button type="button" onclick="placeOrder()">Place Order</button>
+            <button type="button" onclick="prevStep('payment-step')">Back</button>
+        </div>
+    </div>
+
+    <script src="checkout.js"></script>
+</body>
+</html>

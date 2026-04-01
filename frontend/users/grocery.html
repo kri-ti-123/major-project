@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>grocery</title>
+    <link rel="stylesheet" href="grocery.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+</head>
+<body>
+     <!-- uppar side -->
+    <div class="search-container">
+        <div class="detectionLocation">
+        <i class="fa-solid fa-location-dot location-map"></i>
+        <input type="text"placeholder="Prayagraj">
+        <i class="fa-sharp fa-solid fa-caret-down caret-up"></i>
+        </div>
+            <div class="line">                                                
+            </div>  
+                <div class="search-items">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                    <input type="text" placeholder="Search for groceries">
+                </div>
+                    <div class="icons-container">
+                        <div class="profile-icon" onclick="window.location.href='profile/profile.html'">
+                            <i class="fa-solid fa-user"></i>
+                        </div>
+                        <div class="cube" onclick="window.location.href='cart.html'">
+                            <div class="circle">
+                            <i class="fa-solid fa-cart-shopping"></i>
+                            </div>
+                            <div class="small-circle">
+                            2
+                            </div>
+                        </div>
+                    </div>  
+    </div>
+     <!-- banner -->
+    <div class="banner">
+        <div class="banner-slide active">
+            <h2>FRESH</h2>
+            <img src="https://cdn-icons-png.flaticon.com/512/415/415682.png" alt="banner-1">
+            <p>VEGETABLES 30% OFF</p>
+        </div>
+        <div class="banner-slide">
+            <h2>DAIRY</h2>
+            <img src="https://cdn-icons-png.flaticon.com/512/3075/3075977.png" alt="banner-2">
+            <p>PRODUCTS FREE SHIPPING</p>
+        </div>
+        <div class="banner-slide">
+            <h2>PANTRY</h2>
+            <img src="https://cdn-icons-png.flaticon.com/512/3081/3081648.png" alt="banner-3">
+            <p>ESSENTIALS BUY 2 GET 1</p>
+        </div>
+        <div class="dots">
+            <span class="dot active" data-index="0"></span>
+            <span class="dot" data-index="1"></span>
+            <span class="dot" data-index="2"></span>
+        </div>
+    </div>
+
+    <!-- Categories all circle things -->
+<div class="categories">
+    <a href="vegetables.html">
+       <div class="category">
+          <img src="..\assets\images\grocery\vegetable.jpg">
+          <p>Vegetables</p>
+       </div>
+    </a>
+    <a href="fruits.html">   
+       <div class="category">
+          <img src="..\assets\images\grocery\fruit.jpeg">
+          <p>Fruits</p>
+       </div>
+    </a>
+    <a href="dairy.html">
+       <div class="category">
+           <img src="..\assets\images\grocery\dairy.jpg">
+           <p>Dairy</p>
+        </div>
+    </a> 
+    <a href="pantry.html">    
+        <div class="category">
+           <img src="..\assets\images\grocery\pantry1.jpg">
+           <p>Flours</p>
+        </div>
+    </a>  
+    <a href="dry fruits.html">
+       <div class="category">
+          <img src="..\assets\images\grocery\dry fruits.jpg">
+          <p>Oils</p>
+        </div>
+    </a>  
+    <a href="dry fruits.html">
+       <div class="category">
+          <img src="..\assets\images\grocery\dry fruits.jpg">
+          <p>Sauces</p>
+        </div>
+    </a>
+    <a href="dry fruits.html">
+       <div class="category">
+          <img src="..\assets\images\grocery\dry fruits.jpg">
+          <p>Rice</p>
+        </div>
+    </a>
+    <div class="category">
+        <img src="..\assets\images\grocery\snacks.jpeg">
+        <p>Snacks</p>
+    </div>
+    <div class="category">
+        <img src="..\assets\images\grocery\drinks.jpg">
+        <p>Drinks</p>
+    </div>
+    <div class="category">
+        <img src="..\assets\images\grocery\personal care.jpg">
+        <p>Personal Care</p>
+    </div>
+    <a href="dry fruits.html">
+       <div class="category">
+          <img src="..\assets\images\grocery\dry fruits.jpg">
+          <p>Dry Fruits</p>
+        </div>
+    </a>    
+    
+</div>
+
+<!--  Recommended -->
+<div class="section-title">RECOMMENDED WITH DEALS</div>
+
+<div class="cards">
+
+    <div class="card">
+        <img src="https://cdn-icons-png.flaticon.com/512/415/415682.png">
+        <span class="offer">FLAT 30% OFF</span>
+        <h4>Fresh Veggies</h4>
+        <div class="rating">⭐ 4.5 <button class="add-to-cart">Add to Cart</button></div>
+    </div>
+
+    <div class="card">
+        <img src="https://cdn-icons-png.flaticon.com/512/2909/2909789.png">
+        <span class="offer">FLAT ₹100 OFF</span>
+        <h4>Juicy Fruits</h4>
+        <div class="rating">⭐ 4.3 <button class="add-to-cart">Add to Cart</button></div>
+    </div>
+
+    <div class="card">
+        <img src="https://cdn-icons-png.flaticon.com/512/3075/3075977.png">
+        <span class="offer">FLAT 20% OFF</span>
+        <h4>Dairy Delights</h4>
+        <div class="rating">⭐ 4.0 <button class="add-to-cart">Add to Cart</button></div>
+    </div>
+    <div class="card">
+        <img src="https://cdn-icons-png.flaticon.com/512/3081/3081648.png">
+        <span class="offer">FLAT 50% OFF</span>
+        <h4>Pantry Staples</h4>
+        <div class="rating">⭐ 4.2 <button class="add-to-cart">Add to Cart</button></div>
+    </div>
+
+    <div class="card">
+        <img src="https://cdn-icons-png.flaticon.com/512/1046/1046784.png">
+        <span class="offer">FLAT ₹75 OFF</span>
+        <h4>Crunchy Snacks</h4>
+        <div class="rating">⭐ 4.1 <button class="add-to-cart">Add to Cart</button></div>
+    </div>
+
+    <div class="card">
+        <img src="https://cdn-icons-png.flaticon.com/512/5787/5787016.png">
+        <span class="offer">FLAT 40% OFF</span>
+        <h4>Cold Beverages</h4>
+        <div class="rating">⭐ 3.8 <button class="add-to-cart">Add to Cart</button></div>
+    </div>
+    <div class="card">
+        <img src="https://cdn-icons-png.flaticon.com/512/2907/2907254.png">
+        <span class="offer">FLAT 25% OFF</span>
+        <h4>Gift Hampers</h4>
+        <div class="rating">⭐ 4.4 <button class="add-to-cart">Add to Cart</button></div>
+    </div>
+
+    <div class="card">
+        <img src="https://cdn-icons-png.flaticon.com/512/2838/2838895.png">
+        <span class="offer">FREE DELIVERY</span>
+        <h4>Quick Grocery</h4>
+        <div class="rating">⭐ 4.6 <button class="add-to-cart">Add to Cart</button></div>
+    </div>
+
+    <div class="card">
+        <img src="https://cdn-icons-png.flaticon.com/512/415/415682.png">
+        <span class="offer">FLAT 35% OFF</span>
+        <h4>Organic Produce</h4>
+        <div class="rating">⭐ 4.7 <button class="add-to-cart">Add to Cart</button></div>
+    </div>
+
+</div>
+<!--  Bottom Navigation -->
+<div class="bottom-nav">
+    <a href="food.html">Food</a>
+    <a href="grocery.html" class="active-nav">Grocery</a>
+    <a href="driver.html">Driver</a>
+</div>
+
+
+
+    
+<script src="grocery.js"></script>    
+</body>
+</html>    
+</body>
+</html>
