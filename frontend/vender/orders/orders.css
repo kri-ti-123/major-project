@@ -143,3 +143,34 @@ body{
         width:100%;
     }
 }
+.status-badge {
+  padding: 5px 10px;
+  border-radius: 20px;
+  font-size: 13px;
+  color: white;
+}
+
+.status-badge:contains("pending") {
+  background: orange;
+}
+.status-pending { background: orange; }
+.status-accepted { background: green; }
+.status-rejected { background: red; }
+.status-preparing { background: blue; }
+.status-delivered { background: gray; }
+.order-details {
+  margin: 10px 0;
+  font-size: 14px;
+}
+
+.order-items {
+  background: #f9f9f9;
+  padding: 10px;
+  border-radius: 6px;
+  margin: 10px 0;
+}
+
+.order-total {
+  margin: 10px 0;
+  font-size: 16px;
+}

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Vendor Dashboard</title>
+  <link rel="stylesheet" href="products.css">
+</head>
+
+<body>
+
+<div class="navbar">
+    <div class="logo">
+        <span class="servi">Servi</span><span class="go">GO</span>
+    </div>
+    <div class="nav-links">
+        <a href="products.html">Products</a>
+        <a href="../orders/orders.html">Orders</a>
+        <a href="../profilev/profilev.html">Profile</a>
+    </div>
+</div>
+
+<div class="container">
+
+  <div class="left">
+    <img src="assets/vendor.jpg" alt="vendor">
+    
+    <div class="earnings">
+      <h3>Earnings Summary</h3>
+      <p>Today's Earnings: ₹128.50</p>
+      <p>Monthly Earnings: ₹1245.75</p>
+    </div>
+  </div>
+
+  <div class="right">
+     <h2>Add Product</h2>
+     <select id="type">
+       <option value="food">Food</option>
+      <option value="grocery">Grocery</option>
+     </select>
+
+     <input type="text" id="name" placeholder="Product Name">
+     <input type="number" id="price" placeholder="Price">
+     <input type="text" id="image" placeholder="Image URL">
+     <!-- ✅ Category -->
+    <select id="category" onchange="handleCategoryChange()">
+      <option value="">Select Category</option>
+     <option value="sabji">Sabji</option>
+      <option value="pizza">Pizza</option>
+     <option value="roll">Roll</option>
+     <option value="pasta">Pasta</option>
+     <option value="biryani">Biryani</option>
+
+    <option value="sweets">Sweets</option>
+</select>
+    <div id="variantBox"></div>
+
+     <button onclick="addProduct()">Add Product</button>
+
+     <hr>
+
+    <h2>Product List</h2>
+    <div id="productList"></div>
+  </div>
+
+</div>
+
+<!-- ✅ Script hamesha end me -->
+<script src="products.js"></script>
+
+</body>
+</html>

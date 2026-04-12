@@ -15,9 +15,9 @@
     <div class="name"><h3><span class="servi">Servi</span><span class="go">GO</span></h3></div>
     <div class="namepara">All Your Local Services in One Place</div>
      <div class="category">
-        <a href="food.html">Users</a>
-        <a href="../vender/products/products.html">Venders</a>
-        <a href="../drivers/drivers.html">Drivers</a>
+       <a href="#" onclick="goLogin('user')">Users</a>
+       <a href="#" onclick="goLogin('vendor')">Vendors</a>
+       <a href="#" onclick="goLogin('driver')">Drivers</a>
      </div>
      <a href="#about" class="scroll-down-about">Scroll Down ↓</a>
   </section>  
@@ -91,6 +91,19 @@ Our vision is to empower local service providers through technology and give the
   </p>
   <a href="#main" class="back-to-top">Back to Top ↑</a>
 </section>
+<script>
+  function goLogin(role) {
+     if (role === "user") {
+        window.location.href = "login.html";
+      } 
+     else if (role === "vendor") {
+        window.location.href = "../vender/vendor-auth.html";
+      }
+     else if (role === "driver") {
+        window.location.href = "../vender/vendor-auth.html";
+      }
+  }
+</script>
 
 </body>
 </html>

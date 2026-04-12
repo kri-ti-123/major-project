@@ -1,0 +1,106 @@
+{
+  "vendors": [
+    {
+      "id": "1",
+      "name": "Pizza Hub",
+      "products": [
+        {
+          "id": 101,
+          "name": "Margherita",
+          "category": "pizza",
+          "unit": "piece",
+          "price_per_unit": 199,
+          "available": true,
+          "rating": 4.3,
+          "tags": [
+            "veg",
+            "cheesy"
+          ],
+          "sizes": [
+            {
+              "size": "7 inch",
+              "price": 199
+            },
+            {
+              "size": "10 inch",
+              "price": 299
+            }
+          ]
+        },
+        {
+          "id": 102,
+          "name": "Coke",
+          "category": "drinks",
+          "unit": "litre",
+          "price_per_unit": 60,
+          "available": true,
+          "rating": 4.1,
+          "tags": [
+            "cold"
+          ]
+        },
+        {
+          "id": 1775889011476,
+          "name": "TEST PRODUCT",
+          "price_per_unit": 999,
+          "available": true
+        },
+        {
+          "id": 1775889017584,
+          "name": "TEST PRODUCT",
+          "price_per_unit": 999,
+          "available": true
+        },
+        {
+          "id": 1775889050200,
+          "name": "TEST PRODUCT",
+          "price_per_unit": 999,
+          "available": true
+        }
+      ]
+    },
+    {
+      "id": "2",
+      "name": "Grocery Store",
+      "products": [
+        {
+          "id": 201,
+          "name": "Milk",
+          "category": "grocery",
+          "unit": "litre",
+          "price_per_unit": 60,
+          "available": true,
+          "rating": 4.2,
+          "tags": [
+            "daily"
+          ]
+        },
+        {
+          "id": 202,
+          "name": "Atta",
+          "category": "grocery",
+          "unit": "kg",
+          "price_per_unit": 40,
+          "available": true,
+          "rating": 4,
+          "tags": [
+            "essential"
+          ]
+        },
+        {
+          "id": 203,
+          "name": "Masala",
+          "category": "grocery",
+          "unit": "g",
+          "price_per_unit": 2,
+          "available": false,
+          "rating": 3.8,
+          "tags": [
+            "spicy"
+          ]
+        }
+      ]
+    }
+  ],
+  "$schema": "./node_modules/json-server/schema.json"
+}

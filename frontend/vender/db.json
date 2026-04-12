@@ -1,0 +1,188 @@
+{
+  "vendors": [
+    {
+      "id": "4TTkn2uKQDI",
+      "name": "Aman",
+      "shopName": "Aman  Fast food shop",
+      "email": "aman@gmail.com",
+      "phone": "7893425568",
+      "address": "45/l kareli prayagraj uttar pradesh",
+      "password": "aman123@",
+      "createdAt": "2026-04-11T07:03:05.729Z",
+      "products": [
+        {
+          "id": 1775901774403,
+          "name": "Paneer Pizza",
+          "category": "fastfood",
+          "type": "food",
+          "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRCh-hDc6L1I5MaPwHeKP9ATLbKsDrr7fo1Ew&s",
+          "variants": [
+            {
+              "type": "Half",
+              "price": 0
+            },
+            {
+              "type": "Full",
+              "price": 0
+            }
+          ],
+          "available": true
+        }
+      ]
+    },
+    {
+      "id": "XkETL7xs83I",
+      "name": "Saurav Kushwah",
+      "shopName": "delicious pizza shop",
+      "email": "saurav@gmail.com",
+      "phone": "5655656565",
+      "address": "63/kareli",
+      "password": "saurav123@",
+      "createdAt": "2026-04-11T08:40:04.104Z",
+      "products": [
+        {
+          "id": 1775897837721,
+          "name": "Veg Pizza",
+          "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRGsO8_BXeu1PTx2mLrb7OPazuxz4hJp273FQ&s",
+          "category": "pizza",
+          "variants": [
+            {
+              "type": "Small",
+              "price": 100
+            },
+            {
+              "type": "Medium",
+              "price": 150
+            },
+            {
+              "type": "Large",
+              "price": 200
+            }
+          ],
+          "available": true
+        },
+        {
+          "id": 1775899631952,
+          "name": "Chesse Pizza",
+          "image": "https://kitchenatics.com/wp-content/uploads/2020/09/Cheese-pizza-1.jpg",
+          "category": "pizza",
+          "variants": [
+            {
+              "type": "Small",
+              "price": 110
+            },
+            {
+              "type": "Medium",
+              "price": 140
+            },
+            {
+              "type": "Large",
+              "price": 170
+            }
+          ],
+          "available": true
+        },
+        {
+          "id": 1775899718202,
+          "name": "Paneer Pizza",
+          "image": "https://cdn.uengage.io/uploads/5/image-875776-1742973356.jpeg",
+          "category": "pizza",
+          "variants": [
+            {
+              "type": "Small",
+              "price": 150
+            },
+            {
+              "type": "Medium",
+              "price": 200
+            },
+            {
+              "type": "Large",
+              "price": 250
+            }
+          ],
+          "available": true
+        },
+        {
+          "id": 1775899855922,
+          "name": "Corn Pizza",
+          "image": "https://www.mrcoconut.in/img/products/04_12_2022_14_22_978_pm.jpg",
+          "category": "pizza",
+          "variants": [
+            {
+              "type": "Small",
+              "price": 80
+            },
+            {
+              "type": "Medium",
+              "price": 120
+            },
+            {
+              "type": "Large",
+              "price": 160
+            }
+          ],
+          "available": true
+        }
+      ]
+    },
+    {
+      "id": "XJtsRTuJVq4",
+      "name": "Shivam Pal",
+      "shopName": "Shivam Fast Food Shop",
+      "email": "shivam@gamil.com",
+      "phone": "8596471238",
+      "address": "96/nnn, Kareli ,Prayagraj, Uttar Pradesh",
+      "password": "shivam123@",
+      "createdAt": "2026-04-11T14:36:20.731Z",
+      "products": [
+        {
+          "id": 1775918879536,
+          "name": "Pasta",
+          "category": "pasta",
+          "type": "food",
+          "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTGj5fp8DwKOgB02Y1w-suEvsEg_E0eYYdO_A&s",
+          "variants": [
+            {
+              "type": "Half",
+              "price": 35
+            },
+            {
+              "type": "Full",
+              "price": 70
+            }
+          ],
+          "available": true
+        }
+      ]
+    }
+  ],
+  "orders": [
+    {
+      "id": "8yQky-Pzk2o",
+      "userId": "1775985373891",
+      "name": "Mahima Singh",
+      "phone": "8946321778",
+      "address": "78/mn, kareli prayagraj uuutar pradesh",
+      "payment": "cod",
+      "items": [
+        {
+          "name": "Veg Pizza",
+          "price": 100,
+          "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRGsO8_BXeu1PTx2mLrb7OPazuxz4hJp273FQ&s",
+          "quantity": 1
+        },
+        {
+          "name": "Pasta",
+          "price": 35,
+          "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTGj5fp8DwKOgB02Y1w-suEvsEg_E0eYYdO_A&s",
+          "quantity": 1
+        }
+      ],
+      "total": 135,
+      "status": "delivered",
+      "date": "2026-04-12T09:36:39.504Z"
+    }
+  ],
+  "$schema": "./node_modules/json-server/schema.json"
+}

@@ -1,11 +1,19 @@
 document.addEventListener('DOMContentLoaded', function() {
-    // Check if user is already logged in
     const userSession = JSON.parse(localStorage.getItem('userSession'));
-    if (userSession) {
-        window.location.href = 'food.html';
+    const role = localStorage.getItem("role");
+
+    if (userSession && role) {
+        if (role === "user") {
+            window.location.href = "food.html";
+        }
+        else if (role === "vendor") {
+            window.location.href = "/frontend/vendor/products/products.html";
+        }
+        else if (role === "driver") {
+            window.location.href = "/frontend/drivers/drivers.html";
+        }
     }
 });
-
 function toggleForms(event) {
     event.preventDefault();
     const loginForm = document.getElementById('login-form');
@@ -41,6 +49,7 @@ function handleLogin(event) {
             loginTime: new Date().toISOString()
         };
         localStorage.setItem('userSession', JSON.stringify(userSession));
+        localStorage.setItem("role", "user");
         localStorage.setItem('userProfile', JSON.stringify({
             name: user.name,
             email: user.email,
@@ -49,7 +58,20 @@ function handleLogin(event) {
         }));
         
         alert('Login successful!');
-        window.location.href = 'food.html';
+        let role = localStorage.getItem("role");
+
+        if (role === "user") {
+          window.location.href = "food.html";
+        }
+       else if (role === "vendor") {
+          window.location.href = "../vender/products/products.html";
+        }
+       else if (role === "driver") {
+          window.location.href = "../drivers/drivers.html";
+        }
+       else {
+             alert("Role not found! Please go back and select User/Vendor/Driver.");
+         }
     } else {
         alert('Invalid email or password. Please try again or sign up.');
     }
@@ -110,6 +132,7 @@ function handleSignup(event) {
         loginTime: new Date().toISOString()
     };
     localStorage.setItem('userSession', JSON.stringify(userSession));
+    localStorage.setItem("role", "user");
     localStorage.setItem('userProfile', JSON.stringify({
         name: newUser.name,
         email: newUser.email,
@@ -118,5 +141,18 @@ function handleSignup(event) {
     }));
     
     alert('Sign up successful! Welcome to ServiGo!');
-    window.location.href = 'food.html';
-}
+    let role = localStorage.getItem("role");
+
+    if (role === "user") {
+      window.location.href = "food.html";
+    }
+    else if (role === "vendor") {
+      window.location.href = "../vender/products/products.html";
+    }
+    else if (role === "driver") {
+       window.location.href = "../drivers/drivers.html";
+    
+   }
+}; 
+
+      

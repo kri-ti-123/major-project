@@ -22,27 +22,96 @@ function saveProfile() {
     localStorage.setItem('userProfile', JSON.stringify(profile));
     alert('Profile saved successfully!');
 }
+async function loadMyOrders() {
 
-function loadOrders() {
-    const orders = JSON.parse(localStorage.getItem('orders')) || [];
-    const ordersList = document.getElementById('orders-list');
-    
-    if (orders.length === 0) {
-        ordersList.innerHTML = '<p style="color: #999; font-style: italic;">No orders yet</p>';
+    // 🔥 current user lo
+    let user = JSON.parse(localStorage.getItem("userSession"));
+
+    if (!user) {
+        alert("Please login first");
         return;
     }
-    
-    ordersList.innerHTML = orders.map((order, index) => `
-        <div class="order-item">
-            <p><strong>Order #${index + 1}</strong></p>
-            <p><strong>Date:</strong> ${new Date(order.date).toLocaleDateString()}</p>
-            <p><strong>Items:</strong> ${order.items.map(item => item.name).join(', ')}</p>
-            <p><strong>Total:</strong> ₹${order.total}</p>
-            <p><strong>Status:</strong> Delivered</p>
-        </div>
-    `).join('');
-}
 
+    // 🔥 DB se orders lo
+    const res = await fetch("http://localhost:3000/orders");
+    const orders = await res.json();
+
+    // 🔥 sirf current user ke orders filter karo
+    let myOrders = orders.filter(o => o.userId == user.id);
+
+    const container = document.getElementById("my-orders");
+
+    container.innerHTML = "";
+
+    if (myOrders.length === 0) {
+        container.innerHTML = "<p>No orders yet</p>";
+        return;
+    }
+
+    // 🔥 display
+    myOrders.forEach(order => {
+
+        container.innerHTML += `
+        <div class="order-box">
+            <p><strong>Order ID:</strong> ${order.id}</p>
+            <p>Date: ${new Date(order.date).toLocaleString()}</p>
+            <p>Items: ${order.items.map(i => `${i.name} (${i.quantity})`).join(", ")}</p>
+            <p>Total: ₹${order.total}</p>
+            <p>Status: ${order.status}</p>
+
+            ${getUserButtons(order)}
+        </div>
+        `;
+    });
+}
+function getUserButtons(order) {
+
+    // Cancel button (sirf pending pe)
+    if (order.status === "pending") {
+        return `<button onclick="cancelOrder('${order.id}')">Cancel</button>`;
+    }
+
+    // Received button (sirf OFD pe)
+    if (order.status === "out for delivery") {
+        return `<button onclick="markReceived('${order.id}')">Received</button>`;
+    }
+
+    return "";
+}
+async function cancelOrder(orderId) {
+
+    const res = await fetch(`http://localhost:3000/orders/${orderId}`);
+    const order = await res.json();
+
+    order.status = "cancelled";
+
+    await fetch(`http://localhost:3000/orders/${orderId}`, {
+        method: "PUT",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(order)
+    });
+
+    alert("Order cancelled ❌");
+
+    loadMyOrders();
+}
+async function markReceived(orderId) {
+
+    const res = await fetch(`http://localhost:3000/orders/${orderId}`);
+    const order = await res.json();
+
+    order.status = "user_received";
+
+    await fetch(`http://localhost:3000/orders/${orderId}`, {
+        method: "PUT",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(order)
+    });
+
+    alert("Order received ✅");
+
+    loadMyOrders();
+}
 function logout() {
     if (confirm('Are you sure you want to logout?')) {
         localStorage.removeItem('userProfile');
@@ -59,3 +128,4 @@ function updateCartCount() {
         smallCircle.textContent = cart.length;
     }
 }
+document.addEventListener("DOMContentLoaded", loadMyOrders);

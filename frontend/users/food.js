@@ -1,10 +1,30 @@
-/* Session Check - Redirect to Login if not authenticated */
+/* ================== SESSION CHECK ================== */
 const userSession = JSON.parse(localStorage.getItem('userSession'));
 if (!userSession) {
     window.location.href = 'login.html';
 }
 
-/* Slider: dot click + auto-advance every 3s */
+/* ================== API FUNCTION ================== */
+function getData() {
+    return fetch("http://localhost:3000/vendors")
+        .then(res => res.json());
+}
+
+/* ================== CATEGORY FUNCTION ================== */
+function openCategory(category) {
+    getData().then(vendors => {
+
+        let shops = vendors.filter(v =>
+            v.products.some(p => p.category === category)
+        );
+
+        console.log("Filtered Shops:", shops);
+
+        // next step me UI me show karenge
+    });
+}
+
+/* ================== SLIDER ================== */
 const slides = document.querySelectorAll('.banner-slide');
 const dots = document.querySelectorAll('.dot');
 let index = 0;
@@ -40,7 +60,7 @@ dots.forEach(d=>{
 
 startTimer();
 
-/* Update Cart Count */
+/* ================== CART ================== */
 function updateCartCount() {
     const cart = JSON.parse(localStorage.getItem('cart')) || [];
     const cartCountElement = document.querySelector('.small-circle');
@@ -49,10 +69,9 @@ function updateCartCount() {
     }
 }
 
-/* Initialize Cart Count on Page Load */
 updateCartCount();
 
-/* Add to Cart */
+/* ================== ADD TO CART ================== */
 document.querySelectorAll('.add-to-cart').forEach(button => {
     button.addEventListener('click', (e) => {
 
@@ -62,7 +81,6 @@ document.querySelectorAll('.add-to-cart').forEach(button => {
         const img = card.querySelector('img').src;
 
         const priceText = card.querySelector('.price').textContent;
-
         const numbers = priceText.replace(/[^\d]/g, " ").trim().split(" ");
         const finalPrice = parseInt(numbers[numbers.length - 1]);
 
@@ -72,6 +90,11 @@ document.querySelectorAll('.add-to-cart').forEach(button => {
         cart.push(item);
         localStorage.setItem('cart', JSON.stringify(cart));
 
+        updateCartCount();
         alert("Added to cart");
     });
 });
+function openCategory(category) {
+  localStorage.setItem("selectedCategory", category);
+  window.location.href = "product.html";
+}

@@ -53,13 +53,11 @@
             </div>
 
             <!-- FILTER -->
-            <div class="tabs">
-                <div class="tab">All Orders</div>
-                <div class="tab">New</div>
-                <div class="tab">Preparing</div>
-                <div class="tab">Out for delivery</div>
-                <div class="tab">Completed</div>
-            </div>
+           <div class="tab" onclick="filterOrders('all')">All Orders</div>
+            <div class="tab" onclick="filterOrders('pending')">New</div>
+             <div class="tab" onclick="filterOrders('preparing')">Preparing</div>
+           <div class="tab" onclick="filterOrders('out for delivery')">Out for delivery</div>
+            <div class="tab" onclick="filterOrders('delivered')">Completed</div>
 
             <!-- ORDER CARD -->
             <div class="order-card">
@@ -84,6 +82,7 @@
         </div>
     </div>
 </div>
+<script src="orders.js"></script>
 
 </body>
 </html>
