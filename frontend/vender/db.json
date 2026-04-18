@@ -155,6 +155,102 @@
           "available": true
         }
       ]
+    },
+    {
+      "id": "FdjCp_vbUNU",
+      "name": "Mukesh Gupta",
+      "shopName": "Mukesh vegetables Shop",
+      "email": "mukeshkumargupta@gmail.com",
+      "phone": "6352417898",
+      "address": "90/HH bhawapur , Prayagraj, Uttar Pradesh",
+      "password": "mukesh123@",
+      "createdAt": "2026-04-12T14:04:22.351Z",
+      "products": [
+        {
+          "id": 1776005671418,
+          "vendorId": "FdjCp_vbUNU",
+          "name": "Cucumber",
+          "image": "https://th.bing.com/th/id/OIP.zNCFzksslc2d1CFH0KD8WAHaHa?w=241&h=181&c=7&r=0&o=7&dpr=1.3&pid=1.7&rm=3",
+          "category": "vegetable",
+          "type": "grocery",
+          "price_per_unit": 30,
+          "available": true
+        },
+        {
+          "id": 1776058727910,
+          "vendorId": "FdjCp_vbUNU",
+          "name": "Potato",
+          "image": "https://tse2.mm.bing.net/th/id/OIP.MeVmU4vtDMfEhWQJUirzWgHaE7?rs=1&pid=ImgDetMain&o=7&rm=3",
+          "category": "vegetable",
+          "type": "grocery",
+          "price_per_unit": 50,
+          "available": true
+        },
+        {
+          "id": 1776059615760,
+          "vendorId": "FdjCp_vbUNU",
+          "name": "Tomato",
+          "image": "https://images.wallpapersden.com/image/download/tomato-vegetable-ripe_45575_5184x3456.jpg",
+          "category": "vegetable",
+          "type": "grocery",
+          "price_per_unit": 40,
+          "available": true
+        }
+      ]
+    },
+    {
+      "id": "kRu22Op2QSg",
+      "name": "Monu Yadav",
+      "shopName": "Monu Fruit shop",
+      "email": "monu@gmail.com",
+      "phone": "8966332147",
+      "address": "54/jjk, kareli, prayagraj",
+      "password": "monu123@",
+      "createdAt": "2026-04-16T13:40:36.718Z",
+      "products": [
+        {
+          "id": 1776354175274,
+          "vendorId": "kRu22Op2QSg",
+          "name": "Apple",
+          "image": "https://cdn.pixabay.com/photo/2025/02/07/14/22/apples-9390176_1280.jpg",
+          "category": "fruit",
+          "type": "grocery",
+          "price_per_unit": 200,
+          "available": true
+        },
+        {
+          "id": 1776355508774,
+          "vendorId": "kRu22Op2QSg",
+          "name": "Mango",
+          "image": "https://tse1.mm.bing.net/th/id/OIP.b7z1RX4O1kEvdUuSjfJRqQHaE7?rs=1&pid=ImgDetMain&o=7&rm=3",
+          "category": "fruit",
+          "type": "grocery",
+          "price_per_unit": 250,
+          "available": true
+        }
+      ]
+    },
+    {
+      "id": "WyitpIeBmTA",
+      "name": "Rishabh Kesarwani",
+      "shopName": "Rishabh General Store",
+      "email": "rishabh@gmail.com",
+      "phone": "6333448855",
+      "address": "89/kk,kareli ,prayagraj",
+      "password": "rishabh123@",
+      "createdAt": "2026-04-16T16:07:48.513Z",
+      "products": [
+        {
+          "id": 1776356181156,
+          "vendorId": "WyitpIeBmTA",
+          "name": "Wheat Flour",
+          "image": "https://tse1.mm.bing.net/th/id/OIP.99ZoUTE_z9qe6V-5XLr5qwHaHa?rs=1&pid=ImgDetMain&o=7&rm=3",
+          "category": "flour",
+          "type": "grocery",
+          "price_per_unit": 60,
+          "available": true
+        }
+      ]
     }
   ],
   "orders": [
@@ -182,6 +278,34 @@
       "total": 135,
       "status": "delivered",
       "date": "2026-04-12T09:36:39.504Z"
+    },
+    {
+      "id": "AKB-S_5Scgc",
+      "userId": "1775985373891",
+      "vendorId": "XkETL7xs83I",
+      "name": "Priya Srivstava",
+      "phone": "7458931248",
+      "address": "25/ki,kareli , prayag raj",
+      "payment": "cod",
+      "items": [
+        {
+          "name": "Veg Pizza",
+          "price": 100,
+          "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRGsO8_BXeu1PTx2mLrb7OPazuxz4hJp273FQ&s",
+          "quantity": 1,
+          "vendorId": "XkETL7xs83I"
+        },
+        {
+          "name": "Chesse Pizza",
+          "price": 110,
+          "image": "https://kitchenatics.com/wp-content/uploads/2020/09/Cheese-pizza-1.jpg",
+          "quantity": 1,
+          "vendorId": "XkETL7xs83I"
+        }
+      ],
+      "total": 210,
+      "status": "delivered",
+      "date": "2026-04-17T07:57:15.512Z"
     }
   ],
   "$schema": "./node_modules/json-server/schema.json"

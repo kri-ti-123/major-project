@@ -1,3 +1,4 @@
+
 /* ================== SESSION CHECK ================== */
 const userSession = JSON.parse(localStorage.getItem('userSession'));
 if (!userSession) {
@@ -62,7 +63,7 @@ startTimer();
 
 /* ================== CART ================== */
 function updateCartCount() {
-    const cart = JSON.parse(localStorage.getItem('cart')) || [];
+    const cart = JSON.parse(localStorage.getItem('foodcart')) || [];
     const cartCountElement = document.querySelector('.small-circle');
     if (cartCountElement) {
         cartCountElement.textContent = cart.length;
@@ -86,9 +87,9 @@ document.querySelectorAll('.add-to-cart').forEach(button => {
 
         const item = { name, offer, img, price: finalPrice };
 
-        const cart = JSON.parse(localStorage.getItem('cart')) || [];
+        const cart = JSON.parse(localStorage.getItem('foodcart')) || [];
         cart.push(item);
-        localStorage.setItem('cart', JSON.stringify(cart));
+        localStorage.setItem('goodcart', JSON.stringify(cart));
 
         updateCartCount();
         alert("Added to cart");

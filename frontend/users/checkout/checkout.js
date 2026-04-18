@@ -1,3 +1,4 @@
+
 document.addEventListener('DOMContentLoaded', function() {
     showStep('address-step');
     loadOrderSummary();
@@ -23,21 +24,36 @@ function nextStep(nextStepId) {
 function prevStep(prevStepId) {
     showStep(prevStepId);
 }
-
 function loadOrderSummary() {
 
-  let cart = JSON.parse(localStorage.getItem("cart")) || [];
+  let type = localStorage.getItem("checkoutType");
+
+let cart = [];
+
+if (type === "food") {
+  cart = JSON.parse(localStorage.getItem("foodcart")) || [];
+} 
+else if (type === "grocery") {
+  cart = JSON.parse(localStorage.getItem("groceryCart")) || [];
+}
+
+
   let summary = document.getElementById("order-summary");
 
-  let total = 0; // 🔥 important
+  let total = 0;
 
   summary.innerHTML = '<h4>Order Summary</h4>';
 
+  if (cart.length === 0) {
+    summary.innerHTML += "<p>Cart is empty 😢</p>";
+    return;
+  }
+
   cart.forEach(item => {
 
-    let itemTotal = item.price * item.quantity;
+    let itemTotal = item.totalPrice || (item.price * item.quantity);
 
-    total += itemTotal; // 🔥 YE MISSING HAI
+    total += itemTotal;
 
     summary.innerHTML += `
       <div class="summary-item">
@@ -63,7 +79,18 @@ async function placeOrder() {
     const address = document.getElementById('address').value;
     const payment = document.querySelector('input[name="payment"]:checked').value;
 
-    const cart = JSON.parse(localStorage.getItem('cart')) || [];
+    let foodCart = JSON.parse(localStorage.getItem("foodcart")) || [];
+    let groceryCart = JSON.parse(localStorage.getItem("groceryCart")) || [];
+
+    let cart = [];
+
+    // 🔥 detect cart
+    if (foodCart.length > 0) {
+        cart = foodCart;
+    } else if (groceryCart.length > 0) {
+        cart = groceryCart;
+    }
+
     let user = JSON.parse(localStorage.getItem("userSession"));
 
     if (cart.length === 0) {
@@ -74,20 +101,20 @@ async function placeOrder() {
     const order = {
         id: Date.now().toString(),
         userId: user.id,
-        vendorId: cart[0].vendorId,   // 🔥🔥 MOST IMPORTANT LINE
+        vendorId: cart[0].vendorId, // 🔥 important
         name,
         phone,
         address,
         payment,
         items: cart,
-        total: cart.reduce((sum, item) => sum + item.price * item.quantity, 0),
+        total: cart.reduce((sum, item) => 
+            sum + (item.totalPrice || (item.price * item.quantity)), 0),
         status: "pending",
         date: new Date().toISOString()
     };
 
-    console.log("ORDER:", order); // 🔥 check
+    console.log("ORDER:", order);
 
-    // ✅ DB me save
     await fetch("http://localhost:3000/orders", {
         method: "POST",
         headers: {
@@ -96,14 +123,15 @@ async function placeOrder() {
         body: JSON.stringify(order)
     });
 
-    localStorage.removeItem("cart");
+    // 🔥 clear BOTH carts
+    localStorage.removeItem("foodcart");
+    localStorage.removeItem("groceryCart");
 
-    // ✅ SUCCESS UI
     document.body.innerHTML = `
       <div class="success-box">
         <h2>🎉 Order Placed!</h2>
         <p>Your order has been placed successfully</p>
-        <button onclick="window.location.href='../food.html'">Go Home</button>
+        <button onclick="window.location.href='../index.html'">Go Home</button>
       </div>
     `;
 }

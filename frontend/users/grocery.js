@@ -1,3 +1,4 @@
+
 /* Session Check - Redirect to Login if not authenticated */
 const userSession = JSON.parse(localStorage.getItem('userSession'));
 if (!userSession) {
@@ -42,7 +43,7 @@ startTimer();
 
 /* Update Cart Count */
 function updateCartCount() {
-    const cart = JSON.parse(localStorage.getItem('cart')) || [];
+    const cart = JSON.parse(localStorage.getItem('grocerycart')) || [];
     const cartCountElement = document.querySelector('.small-circle');
     if (cartCountElement) {
         cartCountElement.textContent = cart.length;
@@ -62,11 +63,15 @@ document.querySelectorAll('.add-to-cart').forEach(button => {
         const img = card.querySelector('img').src;
         
         const item = { name, offer, rating, img };
-        const cart = JSON.parse(localStorage.getItem('cart')) || [];
+        const cart = JSON.parse(localStorage.getItem('grocerycart')) || [];
         cart.push(item);
-        localStorage.setItem('cart', JSON.stringify(cart));
+        localStorage.setItem('grocerycart', JSON.stringify(cart));
         
         updateCartCount();
         alert('Added to cart!');
     });
 });
+function filterCategory(category) {
+  localStorage.setItem("selectedCategory", category);
+  window.location.href = "grocery-products.html";
+}

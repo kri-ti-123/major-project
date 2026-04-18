@@ -1,12 +1,9 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Products</title>
-<link rel="stylesheet" href="product.css">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
-
+  <title>Products</title>
+  <link rel="stylesheet" href="grocery-products.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
 </head>
 
 <body>
@@ -27,7 +24,7 @@
                         <div class="profile-icon" onclick="window.location.href='profile/profile.html'">
                             <i class="fa-solid fa-user"></i>
                         </div>
-                        <div class="cube" onclick="window.location.href='cart.html'">
+                        <div class="cube" onclick="window.location.href='grocerycart.html'">
                             <div class="circle">
                             <i class="fa-solid fa-cart-shopping"></i>
                             </div>
@@ -38,10 +35,9 @@
                     </div>  
     </div>
 
-<h2 id="category-title"></h2>
+<h2>Products</h2>
 
-<div id="product-list" class="product-container"></div>
-<script src="product.js"></script>
+<div id="product-container" class="container"></div>
 <!--  Bottom Navigation -->
 <div class="bottom-nav">
     <a href="food.html">Food</a>
@@ -49,6 +45,8 @@
     <a href="driver.html">Driver</a>
 </div>
 
+
+<script src="grocery-products.js"></script>
 
 </body>
 </html>

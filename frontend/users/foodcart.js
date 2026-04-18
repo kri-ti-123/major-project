@@ -1,6 +1,7 @@
+
 function loadCart() {
 
-  const cart = JSON.parse(localStorage.getItem('cart')) || [];
+  const cart = JSON.parse(localStorage.getItem('foodcart')) || [];
   const cartItems = document.getElementById('cart-items');
   const totalPrice = document.getElementById('total-price');
 
@@ -46,16 +47,16 @@ function loadCart() {
   totalPrice.textContent = total;
 }
 function increaseQty(index) {
-  let cart = JSON.parse(localStorage.getItem("cart")) || [];
+  let cart = JSON.parse(localStorage.getItem("foodcart")) || [];
 
   cart[index].quantity += 1;
 
-  localStorage.setItem("cart", JSON.stringify(cart));
+  localStorage.setItem("foodcart", JSON.stringify(cart));
   loadCart();
 }
 
 function decreaseQty(index) {
-  let cart = JSON.parse(localStorage.getItem("cart")) || [];
+  let cart = JSON.parse(localStorage.getItem("foodcart")) || [];
 
   if (cart[index].quantity > 1) {
     cart[index].quantity -= 1;
@@ -63,15 +64,18 @@ function decreaseQty(index) {
     cart.splice(index, 1); // remove if 0
   }
 
-  localStorage.setItem("cart", JSON.stringify(cart));
+  localStorage.setItem("foodcart", JSON.stringify(cart));
   loadCart();
 }
 
 function removeFromCart(index) {
-    const cart = JSON.parse(localStorage.getItem('cart')) || [];
+    const cart = JSON.parse(localStorage.getItem('foodcart')) || [];
     cart.splice(index, 1);
-    localStorage.setItem('cart', JSON.stringify(cart));
+    localStorage.setItem('foodcart', JSON.stringify(cart));
     loadCart();
 }
-
+function goToCheckout(type) {
+  localStorage.setItem("checkoutType", type);
+  window.location.href = "checkout/checkout.html";
+}
 loadCart();

@@ -1,3 +1,4 @@
+
 async function loadProducts() {
 
   let category = localStorage.getItem("selectedCategory");
@@ -83,12 +84,21 @@ function changePrice(select) {
   priceText.innerText = "₹" + price;
 }
 function addToCart(product) {
-  console.log(product);
 
-  let cart = JSON.parse(localStorage.getItem("cart")) || [];
+  let cart = JSON.parse(localStorage.getItem("foodcart")) || [];
 
-  // 🔥 SAME PRODUCT + SAME VENDOR check
-  let existing = cart.find(item => 
+  // 🔥 SINGLE VENDOR CHECK
+  if (cart.length > 0 && cart[0].vendorId !== product.vendorId) {
+
+    let confirmClear = confirm("Cart me already dusre restaurant ka item hai. Clear karna hai?");
+
+    if (!confirmClear) return;
+
+    cart = []; // clear cart
+  }
+
+  // 🔥 SAME PRODUCT CHECK
+  let existing = cart.find(item =>
     item.name === product.name && item.vendorId === product.vendorId
   );
 
@@ -100,11 +110,11 @@ function addToCart(product) {
       price: product.price,
       image: product.image,
       quantity: 1,
-      vendorId: product.vendorId // ✅ already correct
+      vendorId: product.vendorId
     });
   }
 
-  localStorage.setItem("cart", JSON.stringify(cart));
+  localStorage.setItem("foodcart", JSON.stringify(cart));
 
   alert("Added to cart 🛒");
 }

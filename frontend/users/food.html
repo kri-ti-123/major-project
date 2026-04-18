@@ -24,10 +24,14 @@
 
     <div class="line"></div>
 
-    <div class="search-items">
-        <i class="fa-solid fa-magnifying-glass"></i>
-        <input type="text" placeholder="Search for food">
-    </div>
+     <div class="search-items">
+          <i class="fa-solid fa-magnifying-glass"></i>
+    
+         <input type="text" id="foodSearch" placeholder="Search for food">
+
+        <!-- 👇 suggestions YAHI ANDAR hoga -->
+        <div id="suggestions"></div>
+     </div>
 
     <div class="icons-container">
         <div class="profile-icon" onclick="window.location.href='profile/profile.html'">
@@ -35,7 +39,7 @@
         </div>
 
         <div class="cube">
-            <div class="circle"onclick="window.location.href='cart.html'">
+            <div class="circle"onclick="window.location.href='foodcart.html'">
                 <i class="fa-solid fa-cart-shopping"></i>
             </div>
             <div class="small-circle">0</div>
@@ -265,5 +269,6 @@
 
 <!-- JS -->
 <script src="food.js"></script>
+<script src="js/food-search.js"></script>
 </body>
 </html>

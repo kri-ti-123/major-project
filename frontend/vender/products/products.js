@@ -56,6 +56,35 @@ function handleCategoryChange() {
     <input type="number" id="fullPrice" placeholder="Full Price">
   `;
   } 
+  else if (category=== "vegetable"){
+     box.innerHTML = `
+     <input type="number" id="onefourthkg" placeholder="250g">
+     <input type="number" id="halfkg" placeholder="500g">
+     <input type="number" id="onekg" placeholder="1kg">
+     <input type="number" id="twokg" placeholder="2kg">
+     <input type="number" id="fivekg" placeholder="5kg">
+  `;
+
+  }
+  else if (category=== "fruit"){
+     box.innerHTML = `
+     <input type="number" id="onefourthkg" placeholder="250g">
+     <input type="number" id="halfkg" placeholder="500g">
+     <input type="number" id="onekg" placeholder="1kg">
+     <input type="number" id="twokg" placeholder="2kg">
+     
+  `;
+  }
+  else if (category=== "flour"){
+     box.innerHTML = `
+     <input type="number" id="halfkg" placeholder="500g">
+     <input type="number" id="onekg" placeholder="1kg">
+     <input type="number" id="twokg" placeholder="2kg">
+     <input type="number" id="fivekg" placeholder="5kg">
+     <input type="number" id="tenkg" placeholder="10kg">
+     
+  `;
+  }
   else {
     box.innerHTML = "";
   }
@@ -191,6 +220,31 @@ else if (category === "biryani") {
       {
         type: "Full",
         price: Number(document.getElementById("fullPrice").value)
+      }
+    ],
+    available: true
+  };
+}
+else if (category === "fruit") {
+  newProduct = {
+    id: Date.now(),
+    name: name,
+    category: category,
+    vendorId: vendorSession.id,
+    type:type,
+    image: image,
+    variants: [
+       {
+        type: "halfkg",
+        price: Number(document.getElementById("halfkgprice").value)
+      },
+      {
+        type: "onekg",
+        price: Number(document.getElementById("onekgprice").value)
+      },
+      {
+        type: "twokg",
+        price: Number(document.getElementById("twokgprice").value)
       }
     ],
     available: true

@@ -350,3 +350,24 @@ body{
     color:#ff5722;
     font-weight:bold;
 }
+.search-items {
+  position: relative;
+}
+
+#suggestions {
+  position: absolute;
+  background: white;
+  width: 200px;
+  border: 1px solid #ccc;
+  margin-top: 5px;
+  z-index: 1000;
+}
+
+#suggestions div {
+  padding: 8px;
+  cursor: pointer;
+}
+
+#suggestions div:hover {
+  background-color: #f0f0f0;
+}
